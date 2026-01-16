@@ -1,15 +1,22 @@
-* {
-    background-color: rgb(70, 70, 189);
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        background-color: rgb(70, 70, 189);
 }
 
-
-
 .thumbnails {
-    height: 50vh;
+
+    height: 20vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    
 }
 
-
+.thumbnails {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+}

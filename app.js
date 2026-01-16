@@ -72,3 +72,8 @@ function createBigImage(imageData) {
 }
 
 createBigImage(images[0])
+
+// images = your photo archive
+// thumbnails = buttons made from that archive
+// click = “show this object’s data”
+// big image = a single reusable display

@@ -3,7 +3,18 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-        background-color: rgb(70, 70, 189);
+    background-color: rgb(70, 70, 189);
+}
+
+body {
+    display: flex;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 100%;
 }
 
 .thumbnails {
@@ -19,4 +30,33 @@ body {
     display: flex;
     position: fixed;
     justify-content: center;
+}
+
+
+#bigDisplay img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+
+@media (min-width: 100vw) and (max-width: 900px) {
+
+    .gallery img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        }
+
+        
+}
+
+
+@media (min-width: 800px) and (max-width: 100%) {
+
+    .thumbnails {
+        height: 100vh;
+    }
 }

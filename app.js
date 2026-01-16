@@ -5,6 +5,7 @@ const thumbnailsContainer = document.querySelector(`.thumbnails`)
 const bigDisplay = document.getElementById(`bigDisplay`)
 
 
+
 // add arrays - collection of objects - this case imgages
 const images = [
     {src: 'assets/1.jpg', 
@@ -54,6 +55,7 @@ function createThumbnails() {
 }
 
 
+
 createThumbnails() //call the funtion / envoke it ot it will not display
 
 
@@ -72,8 +74,3 @@ function createBigImage(imageData) {
 }
 
 createBigImage(images[0])
-
-// images = your photo archive
-// thumbnails = buttons made from that archive
-// click = “show this object’s data”
-// big image = a single reusable display

@@ -1,0 +1,14 @@
+* {
+    background-color: rgb(70, 70, 189);
+}
+
+
+
+.thumbnails {
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+

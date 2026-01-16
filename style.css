@@ -5,10 +5,11 @@
 
 
 .thumbnails {
-    height: 20vh;
+    height: 50vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
+
 }
 
 

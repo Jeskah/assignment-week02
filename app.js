@@ -8,8 +8,17 @@ const bigDisplay = document.getElementById(`bigDisplay`)
 
 // add arrays - collection of objects - this case imgages
 const images = [
-    {src: 'assets/1.jpg', 
-    alt: `arcade`},
+    {src: `https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/psychedelic-kitty-cat-peggy-collins.jpg`,
+    alt: `patterned cat` 
+    },
+    
+    {src: `https://i.pinimg.com/736x/8e/ce/d6/8eced6828f56f07a22364e93bf63e918.jpg`,
+    alt: `patterned cat` 
+    },
+    
+
+    {src: `assets/1.jpg`, 
+    alt: `arcade` },
 
     {src: 'assets/2.jpg', 
     alt: `inky`},
@@ -25,6 +34,9 @@ const images = [
 
     {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2989122.jpg&f=1&nofb=1&ipt=ed7cee31dc7cf822a237ecfd6f0b2f332da42eaa7519d8fb12796ce2891cea93',
     alt: `psykitty1`},
+
+     {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercosmos.com%2Fw%2Ffull%2Fd%2F6%2Fc%2F2103736-3840x2160-desktop-4k-hypnotic-wallpaper.jpg&f=1&nofb=1&ipt=4a3de5912870f300e6e93c648cd4e79a0175aadd24d9d8c0ab3467deef2a4263',
+    alt: `hypnotic swirl`},
 
 ] //sources/data
 
@@ -73,4 +85,18 @@ function createBigImage(imageData) {
 
 }
 
+
 createBigImage(images[0])
+
+
+
+
+
+
+// // WAHOO I CHANGED THE POSITION 
+// function showImage() {
+//     bigImage.src = images[0].src;
+//     bigImage.style.objectPosition = images[i].position;
+
+// }
+

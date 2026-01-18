@@ -3,11 +3,15 @@ console.log(`Say Cheese...`)
 // selecting thumbnail container from element in HTML
 const thumbnailsContainer = document.querySelector(`.thumbnails`)
 const bigDisplay = document.getElementById(`bigDisplay`)
-
+const noResultMsg = document.getElementById('noResults')
 
 
 // add arrays - collection of objects - this case imgages
 const images = [
+    {src: "assets/colourfulcat.png",
+    alt: `colourful cat rainbow`
+    },
+
     {src: `https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/psychedelic-kitty-cat-peggy-collins.jpg`,
     alt: `patterned cat` 
     },
@@ -30,10 +34,10 @@ const images = [
     alt: `light`},
 
     {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnamingcat.com%2Fwp-content%2Fuploads%2F2024%2F04%2F80s-Cat-Names.jpg&f=1&nofb=1&ipt=a6bd13f73e8a2ecf2bbefdbbcc4551ed35bb58c8cfec24a0eaea038edef25c06',
-    alt: `pyskitty`},
+    alt: `retro kitty`},
 
     {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2989122.jpg&f=1&nofb=1&ipt=ed7cee31dc7cf822a237ecfd6f0b2f332da42eaa7519d8fb12796ce2891cea93',
-    alt: `psykitty1`},
+    alt: `kitty swirl`},
 
      {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercosmos.com%2Fw%2Ffull%2Fd%2F6%2Fc%2F2103736-3840x2160-desktop-4k-hypnotic-wallpaper.jpg&f=1&nofb=1&ipt=4a3de5912870f300e6e93c648cd4e79a0175aadd24d9d8c0ab3467deef2a4263',
     alt: `hypnotic swirl`},
@@ -42,16 +46,18 @@ const images = [
 
 
 
-function createThumbnails() {
+function createThumbnails(listImages) {
+
+    thumbnailsContainer.innerHTML = ''
     
-        images.forEach(function(image) {  
+        listImages.forEach(function(image) {  
         //for, forEach Loops, needs 'callback function' as its "argument"
         //image is the perameter, they are the images
 
         const imageElement = document.createElement('img')
         // creating the imageElement with the 'img' tag
 
-        console.log(image)
+
 
         // setting img tag up to link the content of objects 
         imageElement.src = image.src
@@ -60,15 +66,10 @@ function createThumbnails() {
         imageElement.addEventListener('click', function () {
             createBigImage(image)
         })
-
         //create tag - set its content - then APPEND to DOM
         thumbnailsContainer.append(imageElement)
 })
 }
-
-
-
-createThumbnails() //call the funtion / envoke it ot it will not display
 
 
 function createBigImage(imageData) {
@@ -85,11 +86,39 @@ function createBigImage(imageData) {
 
 }
 
-
 createBigImage(images[0])
+createThumbnails(images)
+
+
+// search input and thumbnail sort
+const searchInput = document.getElementById('searchInput')
+
+searchInput.addEventListener('input', function () {
+    const searchTerm = searchInput.value.toLowerCase()
+
+    const matchingImages = images.filter(function (image) {
+        return image.alt.toLowerCase().includes(searchTerm)
+    })
+
+    createThumbnails(matchingImages)
+
+    if (matchingImages.length === 0) {
+        noResultMsg.style.display = `block`
+    } else {
+        noResultMsg.style.display = 'none'
+    }
+    
+})
 
 
 
+
+
+
+
+// one array method: filter
+// one event: input
+// one redraw: createThumbnails()
 
 
 
@@ -99,4 +128,7 @@ createBigImage(images[0])
 //     bigImage.style.objectPosition = images[i].position;
 
 // }
+
+
+
 

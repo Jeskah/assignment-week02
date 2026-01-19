@@ -6,4 +6,6 @@ Mostly victories but at this point it's a matter of reading and writing the code
 
 I'm currently also designing some cards in illustrator to help me make visual links to the operations of Javascript and that is helping to solidify the basics. So far it's still very enjoyable and while I'm studying in my own time to catch up on things that might not sink in the first time the challenge has been fun and rewarding and not yet hit a stage where I think I can't do something despite behing somewhat out of my depth. 
 
+I also struggle with CSS and combining rules to get the results I want so that will also take some studying.
+
 Rinse and repeat!

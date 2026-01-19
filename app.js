@@ -1,9 +1,11 @@
 console.log(`Say Cheese...`)
 
 // selecting thumbnail container from element in HTML
-const thumbnailsContainer = document.querySelector(`.thumbnails`)
+const thumbnailsContainer = document.getElementById(`thumbnails`)
+
 const bigDisplay = document.getElementById(`bigDisplay`)
-const noResultMsg = document.getElementById('noResults')
+
+// const noResultMsg = document.getElementById('noResults')
 
 
 // add arrays - collection of objects - this case imgages
@@ -39,7 +41,7 @@ const images = [
     {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2989122.jpg&f=1&nofb=1&ipt=ed7cee31dc7cf822a237ecfd6f0b2f332da42eaa7519d8fb12796ce2891cea93',
     alt: `kitty swirl`},
 
-     {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercosmos.com%2Fw%2Ffull%2Fd%2F6%2Fc%2F2103736-3840x2160-desktop-4k-hypnotic-wallpaper.jpg&f=1&nofb=1&ipt=4a3de5912870f300e6e93c648cd4e79a0175aadd24d9d8c0ab3467deef2a4263',
+    {src: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercosmos.com%2Fw%2Ffull%2Fd%2F6%2Fc%2F2103736-3840x2160-desktop-4k-hypnotic-wallpaper.jpg&f=1&nofb=1&ipt=4a3de5912870f300e6e93c648cd4e79a0175aadd24d9d8c0ab3467deef2a4263',
     alt: `hypnotic swirl`},
 
 ] //sources/data
@@ -57,11 +59,11 @@ function createThumbnails(listImages) {
         const imageElement = document.createElement('img')
         // creating the imageElement with the 'img' tag
 
-
-
         // setting img tag up to link the content of objects 
         imageElement.src = image.src
         imageElement.alt = image.alt
+        imageElement.className = "thumbnails";
+        imageElement.tabIndex = 0;
 
         imageElement.addEventListener('click', function () {
             createBigImage(image)
@@ -71,23 +73,25 @@ function createThumbnails(listImages) {
 })
 }
 
+createThumbnails(images)
+
 
 function createBigImage(imageData) {
 
-    bigDisplay.innerHTML = ''
+    bigDisplay.innerHTML = '' 
+    // clears the container 
 
     const bigImage = document.createElement('img')
 
-    bigImage.src = imageData.src
-    bigImage.alt = imageData.alt
-
-
-    bigDisplay.append(bigImage)
+    bigImage.src = imageData.src;
+    bigImage.alt = imageData.alt;
+    bigImage.className = "big-image";
+    bigDisplay.append(bigImage);
 
 }
 
 createBigImage(images[0])
-createThumbnails(images)
+
 
 
 // search input and thumbnail sort
@@ -105,7 +109,7 @@ searchInput.addEventListener('input', function () {
     if (matchingImages.length === 0) {
         noResultMsg.style.display = `block`
     } else {
-        noResultMsg.style.display = 'none'
+        noResultMsg.style.display = ('none')
     }
     
 })

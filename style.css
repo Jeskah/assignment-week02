@@ -1,128 +1,64 @@
-@media (min-width > 20rem) {
-
-
-    .thumbnails {
-         flex-wrap: wrap;
-         flex-direction: row;
-         position: absolute;
-    }
-
-    
-}
-
-
-
-
 * {    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-body {
+.thumbnails-container {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
     background-color: rgb(0, 0, 0);
-    /* height: 100%; */
-}
-
-
-.gallery {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
-}
-
-
-.thumbnails img {
-    object-fit: cover;
-    height: 6rem;
-    width: 100%;
-    cursor: pointer;
-}
-
-
-/* the container */
-.thumbnails {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: auto; 
-/* content exeeds size of viewport, scroll, dont spill */
-/* overflow: scroll; */
-    width: 11rem;
-}
-
-/* trying this in JavaScript */
-
-
-
-.thumbnails:hover ~ #bigDisplay img {
-    filter: brightness(0.6) blur(4px);
-}
-
-#bigDisplay {
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-}
-
-#bigDisplay img {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    object-fit: cover;
-}
-
-.bigDisplay {
-        transition: 0.3s ease;
-}
-
-.search-container:hover ~ .gallery .bigDisplay {
-   filter: brightness(0.6) blur(4px);
-}
-
-
-.search-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    left: 4rem;
-}
-
-#searchInput {
-    height: 20px;
-    width: auto;
-
-    padding: 1rem;
     position: absolute;
-    width: 40%;
-    top: 38rem;
-    border: none;
-    background-color: rgba(247, 245, 245, 0.9);
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    margin-inline: auto;
+    overflow-y: auto;
+    
 }
 
-img {
-    transition: all 0.3s;
+.thumbnails {
+    width: 15vw; 
+    height: 7vh;
+    object-fit: cover;
+
 }
 
-.gallery .thumbnails img:hover {
-    transform: scale(1.06);
+.big-display {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    overflow: hidden;
 }
 
+.bigImage {
+    height: 100vh;
 
+    overflow: hidden;
 
-
-
-#thumbnails {
-    container-type: inline-size;
 }
 
-
-
-/* @media (min-width: 800px) and (max-width: 100%) {
-
-    .thumbnails {
-        height: 100vh;
+@media (width < 425.5px) {
+    .thumbnails-container {
+        bottom: 50px;
     }
-} */
+}
+
+@media (width < 1040.5px) {
+    .thumbnails-container {
+        bottom: 50px;
+    }
+
+    .big-display {
+        background-color: aqua;
+    }
+
+    .big-display img {
+        object-fit: cover;
+        width: 100vw;
+    }
+}
+
